@@ -1,0 +1,44 @@
+body{
+    background:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}.moon{
+    background-color: black;
+    width: 250px;
+    height: 250px;
+    border-radius:50%;
+    position: relative;
+}
+
+.moon::before{
+    content:"";
+    background-color:#fff;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    animation: 3.2s animation linear infinite alternate;
+}
+
+@keyframes animation{
+    0%{
+        transform:translateX(40px) scale(0.9);
+        box-shadow: none;
+    }
+
+    50%{
+        transform:translate(0px,0px) scale(1.02);
+        box-shadow:0 0 10px #fff,0 0 80px 2px #fff;
+    }
+    
+    100%{
+        transform:translateX(-40px) scale(0.9);
+        box-shadow:none;
+    }
+    
+}
